@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Calculator</title>
+  <!-- Include Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+
+<body class="bg-gray-900 text-white">
+
+  <section class="lg:items-top mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen">
+    <div class="mx-auto max-w-3xl text-center">
+      <h1 class="bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
+        Fibonacci Sequence Calculator
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl sm:text-xl/relaxed">
+        Use this calculator to explore Fibonacci sequences. Input a non-negative number to reveal the corresponding numerical pattern.
+      </p>
+
+      <!-- Input Form -->
+      <div class="mt-8 flex justify-center">
+        <form onsubmit="calculateFibonacci(); return false;" class="flex flex-col items-center">
+          <label for="number" class="sr-only">Enter a number to calculate Fibonacci</label>
+          <div class="relative flex items-center">
+            <input
+              type="number"
+              id="number"
+              class="block w-full px-3 py-2 rounded-l bg-gray-200 text-gray-900 placeholder-gray-600 focus:outline-none"
+              placeholder="Enter a number"
+              required
+            />
+            <button
+              type="submit"
+              class="rounded-r bg-blue-700 px-4 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none"
+            >
+              Calculate
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Result Table -->
+      <div class="mt-16">
+        <h2 class="mb-4 text-xl font-bold">Previous Calculations</h2>
+        <div class="flex flex-col">
+          <div class="-m-1.5 overflow-x-auto">
+            <div class="p-1.5 min-w-full inline-block align-middle">
+              <div class="border rounded overflow-hidden dark:border-gray-700 animate__animated animate__fadeIn">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-white uppercase font-bold">F(n)</th>
+                      <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-white uppercase font-bold">Result</th>
+                    </tr>
+                  </thead>
+                  <tbody id="resultsTableBody" class="divide-y divide-gray-200 dark:divide-gray-700">
+                    <!-- Results will be displayed here dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script for Fibonacci calculation -->
+  <script src="fibonacciCalculator.js"></script>
+</body>
+</html>
